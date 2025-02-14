@@ -59,7 +59,7 @@ export default class OpenAI extends Base {
             // vision 模型的默认 max_tokens 极低，基本很难回答完整，因此手动设置为模型最大值
             max_tokens: this.options.model === 'gpt-4-vision-preview'
                 ? openaiModelConfigs['gpt-4-vision-preview'].maxTokens
-                : undefined,
+                : 32_768,
             temperature: this.options.temperature,
             top_p: this.options.topP,
             stream: true,
